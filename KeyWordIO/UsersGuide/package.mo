@@ -12,8 +12,9 @@ package UsersGuide "User's Guide"
 This library provides functions for reading parameters and and writing variables in key word oriented format, e.g.:
 </p>
 <pre>
-  a = 2.3
-  R = 220
+  R0 = 2
+  R1 = 2.2
+  R2 = 2*3
 </pre>
 </html>"));
 end UsersGuide;
