@@ -1,11 +1,11 @@
 # KeyWordIO
 Modelica library for reading and writing variables and parameters to files. The main objective of the library is to read and write variables and paramters in key word oriented format like:
 
+```
 R0 = 2
-
 R1 = 2.2
-
 R2 = 2*3 
+```
 
 In version 0.2.0 the reading and writing of CSV files is added.   
   
