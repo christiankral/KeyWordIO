@@ -1,8 +1,8 @@
 within KeyWordIO;
 function writeRealVariables "Write multiple real variables to file"
   input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
-  input String name[:] "Name of parameter";
-  input Real data[:] "Actual value of parameter";
+  input String name[:] "Name of variable";
+  input Real data[:] "Actual value of variable";
   input Boolean append = false "Append data to file";
 algorithm
   // Check sizes of name and data

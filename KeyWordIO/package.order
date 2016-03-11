@@ -2,6 +2,8 @@ UsersGuide
 Examples
 writeRealVariable
 writeRealVariables
+writeRealCSV
 readRealParameter
+readRealCSV
 expression
 readLineWithoutCache
