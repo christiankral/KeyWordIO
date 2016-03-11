@@ -1,5 +1,5 @@
 # KeyWordIO
-Modelica library for reading and writing variables and parameters to files. The main objective of the library is to read and write variables and paramters in key word oriented format
+Modelica library for reading and writing variables and parameters to files. The main objective of the library is to read and write variables and paramters in key word oriented format like
 
   x = 0.1
   
