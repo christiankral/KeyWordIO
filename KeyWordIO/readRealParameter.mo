@@ -1,6 +1,7 @@
 within KeyWordIO;
 function readRealParameter "Read the value of a Real parameter from file"
   import Modelica.Utilities.*;
+  import KeyWordIO;
   input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input String name "Name of parameter";
   input Boolean cache = false "Read file with/without caching";
@@ -30,7 +31,10 @@ algorithm
       if token.string == name then
         message2 := message + String(iline);
         (delimiter, nextIndex) := Strings.scanDelimiter(line, nextIndex, {"="}, message2);
-        (result, nextIndex) := expression(line, nextIndex, message2);
+        (result, nextIndex) :=KeyWordIO.Strings.expression(
+          line,
+          nextIndex,
+          message2);
         (delimiter, nextIndex) := Strings.scanDelimiter(line, nextIndex, {";", ""}, message2);
         Strings.scanNoToken(line, nextIndex, message2);
         found := true;

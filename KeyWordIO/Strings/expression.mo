@@ -1,6 +1,7 @@
-within KeyWordIO;
+within KeyWordIO.Strings;
 function expression
   "Expression interpreter that returns with the position after the expression (expression may consist of +,-,*,/,^,(),sin(), cos(), tan(), sqrt(), asin(), acos(), atan(), exp(), log(), pi"
+  extends Modelica.Icons.Function;
   import Modelica.Utilities.Types;
   import Modelica.Utilities.Strings;
   import Modelica.Math;
@@ -54,7 +55,10 @@ protected
   algorithm
     (token, nextIndex) := Strings.scanToken(string, startIndex, unsigned=  true);
     if token.tokenType == Types.TokenType.DelimiterToken and token.string == "(" then
-      (result, nextIndex) := expression(string, nextIndex, message);
+      (result,nextIndex) := expression(
+          string,
+          nextIndex,
+          message);
       (delimiter, nextIndex) := Strings.scanDelimiter(string, nextIndex, {")"}, message);
     elseif token.tokenType == Types.TokenType.RealToken then
       result := token.real;
@@ -66,7 +70,10 @@ protected
       else
         functionName := token.string;
         (delimiter, nextIndex) := Strings.scanDelimiter(string, nextIndex, {"("}, message);
-        (result, nextIndex) := expression(string, nextIndex, message);
+        (result,nextIndex) := expression(
+            string,
+            nextIndex,
+            message);
         (delimiter, nextIndex) := Strings.scanDelimiter(string, nextIndex, {")"}, message);
         if functionName == "sin" then
           result := Math.sin(result);

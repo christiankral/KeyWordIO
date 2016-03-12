@@ -1,5 +1,6 @@
 within KeyWordIO;
 function writeRealCSV "Writing real matrix to CSV file"
+  extends Modelica.Icons.Function;
   input String fileName = "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input String delimiter = "\t" "Delimiter";
   input Real matrix[:,:] "Actual matrix to be written to CSV file";
@@ -12,7 +13,7 @@ algorithm
     Modelica.Utilities.Streams.error("writeRealCSV: number of columns of matrix ("+String(size(matrix,1))+") and header ("+String(size(header,1))+") do not match");
   end if;
   Modelica.Utilities.Files.removeFile(fileName);
-  // Write header to file
+  // Write headers to file
   for col in 1:size(header,1) loop
     line := header[col, 1];
     for row in 2:size(header,2) loop

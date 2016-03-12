@@ -1,5 +1,6 @@
 within KeyWordIO;
 function writeRealVariables "Write multiple real variables to file"
+  extends Modelica.Icons.Function;
   input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input String name[:] "Name of variable";
   input Real data[:] "Actual value of variable";
