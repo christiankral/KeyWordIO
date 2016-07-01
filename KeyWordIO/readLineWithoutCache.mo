@@ -60,7 +60,7 @@ const char* ReadLine(const char *fileName, int lineNumber, int* endOfFile)
                 }
         }
         fclose(fp);
-        strline[lineLen-1]='\0';
+        strline[lineLen-1]='\\0';
         line=ModelicaAllocateString(lineLen);
         strcpy(line, strline);
         *endOfFile=0;
