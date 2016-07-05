@@ -1,0 +1,4 @@
+within KeyWordIO.Strings;
+function scanStringWithDelimiter "Scan string with string delimiter"
+  extends Modelica.Icons.Function;
+end scanStringWithDelimiter;
