@@ -1,4 +1,6 @@
 ReadRealParameter
 ReadRealCSV
+ReadStringCSV
+ReadColumnByHeaderName
 WriteRealVariable
 WriteRealVariables
