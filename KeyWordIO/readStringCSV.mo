@@ -49,7 +49,6 @@ algorithm
           (val,indx) := Modelica.Utilities.Strings.scanString(line,indx);
         else
           // Read unquoted string value directly from line using substring...
-          Modelica.Utilities.Streams.print("i="+String(i));
           if i==colEnd then
             val := Modelica.Utilities.Strings.substring(line,indx,Modelica.Utilities.Strings.length(line));
           else

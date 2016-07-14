@@ -7,4 +7,5 @@ readRealParameter
 readRealCSV
 readStringCSV
 readLineWithoutCache
+getCSVSize
 Strings
