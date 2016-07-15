@@ -1,5 +1,6 @@
 within KeyWordIO;
 function readRealParameter "Read the value of a Real parameter from file"
+  extends Modelica.Icons.Function;
   import Modelica.Utilities.*;
   import KeyWordIO;
   input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));

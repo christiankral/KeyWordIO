@@ -11,5 +11,6 @@ readLineWithoutCache
 getCSVSize
 getCSVRows
 getCSVCols
+getCaseCol
 Strings
 Records
