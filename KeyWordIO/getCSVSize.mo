@@ -5,7 +5,6 @@ function getCSVSize
 
   input String fileName "CSV file name";
   input String delimiter = "\t" "Delimiter of CSV file";
-//  input Boolean useQuotedStrings = true "Use quoted strings, if true";
   output Integer row "Number of rows";
   output Integer col "Number of columns";
 

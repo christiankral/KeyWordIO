@@ -20,6 +20,7 @@ protected
   String val "Local string value";
   Integer indexDelimiter[countDelimiter]
     "Indexes of delimiters within line string";
+  Integer colMax = KeyWordIO.getCSVCols(fileName=fileName,delimiter=delimiter) "Maximum number of rows";
 
 algorithm
   // Check validity of indexes
@@ -49,7 +50,7 @@ algorithm
           (val,indx) := Modelica.Utilities.Strings.scanString(line,indx);
         else
           // Read unquoted string value directly from line using substring...
-          if i==colEnd then
+          if i==colMax then
             val := Modelica.Utilities.Strings.substring(line,indx,Modelica.Utilities.Strings.length(line));
           else
             val := Modelica.Utilities.Strings.substring(line,indx,indexDelimiter[i]-1);
