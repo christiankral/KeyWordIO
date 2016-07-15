@@ -8,9 +8,6 @@ model ReadCaseCSV "Read case record from CSV file"
       margin=2,
       delimiter="\t",
       useQuotedStrings=false);
-  parameter Integer iva = KeyWordIO.getCaseColIndex(case,"va");
-  parameter Real va1[:] = case.matrix[:,iva];
-  parameter Real va2[:] = KeyWordIO.getCaseCol(case,"va");
+  parameter Real va[:] = KeyWordIO.getCaseCol(case,"va");
 
-  annotation (experiment(StopTime = 1, Interval = 1E-3));
 end ReadCaseCSV;

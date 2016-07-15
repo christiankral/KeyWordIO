@@ -3,6 +3,8 @@ Examples
 writeRealVariable
 writeRealVariables
 writeRealCSV
+writeCaseCSV
+overwriteCaseCSV
 readRealParameter
 readRealCSV
 readStringCSV

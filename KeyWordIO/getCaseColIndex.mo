@@ -1,6 +1,5 @@
 within KeyWordIO;
-function getCaseColIndex
-  "Extract column of matrix identified by header key"
+function getCaseColIndex "Extract column of matrix identified by header key"
   extends Modelica.Icons.Function;
   input KeyWordIO.Records.Case case "Input case record";
   input String name "Name of header string be searched";

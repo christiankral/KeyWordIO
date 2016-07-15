@@ -1,13 +1,13 @@
 within KeyWordIO;
 function readStringCSV "Read real matrix from CSV file"
   extends Modelica.Icons.Function;
-  input String fileName "CSV file name";
+  input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer rowBegin = 1 "First row of CSV array";
   input Integer rowEnd = rowBegin "End row of CSV array";
   input Integer colBegin = 1 "First column of CSV array";
   input Integer colEnd = colBegin "End column of CSV array";
   input String delimiter = "\t" "Delimiter of CSV file";
-  input Boolean useQuotedStrings = true "Use quoted strings, if true";
+  input Boolean useQuotedStrings = false "Use quoted strings, if true";
   output String matrix[rowEnd-rowBegin+1,colEnd-colBegin+1]
     "Matrix read from CSV file";
 
@@ -20,7 +20,8 @@ protected
   String val "Local string value";
   Integer indexDelimiter[countDelimiter]
     "Indexes of delimiters within line string";
-  Integer colMax = KeyWordIO.getCSVCols(fileName=fileName,delimiter=delimiter) "Maximum number of rows";
+  Integer colMax = KeyWordIO.getCSVCols(fileName=fileName,delimiter=delimiter)
+    "Maximum number of rows";
 
 algorithm
   // Check validity of indexes

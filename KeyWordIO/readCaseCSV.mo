@@ -2,11 +2,11 @@ within KeyWordIO;
 function readCaseCSV
   "Read header, left margin and numeric data of CSV file organized in \"case\" format"
   extends Modelica.Icons.Function;
-  input String fileName "CSV file name";
+  input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer header = 2 "Number of header rows";
   input Integer margin = 2 "Number of left margin columns";
   input String delimiter = "\t" "Delimiter of CSV file";
-  input Boolean useQuotedStrings = true "Use quoted strings, if true";
+  input Boolean useQuotedStrings = false "Use quoted strings, if true";
   output KeyWordIO.Records.Case case(
     rowMax=KeyWordIO.getCSVRows(fileName=fileName, delimiter=delimiter),
     colMax=KeyWordIO.getCSVCols(fileName=fileName, delimiter=delimiter),

@@ -1,6 +1,5 @@
 within KeyWordIO;
-function getCSVSize
-  "Determined number of rows and columns of CSV file"
+function getCSVSize "Determined number of rows and columns of CSV file"
   extends Modelica.Icons.Function;
 
   input String fileName "CSV file name";
