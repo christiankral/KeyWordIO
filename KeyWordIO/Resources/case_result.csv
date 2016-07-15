@@ -1,8 +1,8 @@
-case	condition	va	ia	nShaft	tauLoad
-*	*	V	A	rpm	Nm
-case 1	condition 1	1	0.02864	301.9204851752	0.0011456
-case 1	condition 2	2	0.03623	495.6064690027	0.0014492
-case 2	condition 1	3	0.04587	698.5714285714	0.0018348
-case 2	condition 2	4	0.05164	898.1300539084	0.0020656
-case 3	condition 1	5	0.05092	995.2762803235	0.0020368
-case 3	condition 2	6	0.02768	298.4130727763	0.0011072
+case	condition	Vrms	phiv	f	R	L	Irms	phii
+*	*	V	deg	Hz	Ohm	H	A	deg
+case 1	condition 1	100	0	50	100	0.024	0	0
+case 1	condition 2	120	0	60	120	0.02	0	0
+case 2	condition 1	100	90	50	100	0.024	0	0
+case 2	condition 2	120	90	60	120	0.02	0	0
+case 3	condition 1	100	45	50	100	0.024	0	0
+case 3	condition 2	120	45	60	120	0.02	0	0

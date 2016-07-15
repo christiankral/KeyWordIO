@@ -15,5 +15,6 @@ getCSVRows
 getCSVCols
 getCaseCol
 getCaseColIndex
+getCaseNumbers
 Strings
 Records
