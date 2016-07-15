@@ -7,7 +7,6 @@ readRealParameter
 readRealCSV
 readStringCSV
 readCaseCSV
-readCaseCSV2
 readLineWithoutCache
 getCSVSize
 getCSVRows
