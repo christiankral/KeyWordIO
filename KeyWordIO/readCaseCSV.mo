@@ -7,9 +7,10 @@ function readCaseCSV
   input Integer margin = 2 "Number of left margin columns";
   input String delimiter = "\t" "Delimiter of CSV file";
   input Boolean useQuotedStrings = false "Use quoted strings, if true";
+  input Boolean cache = false "Read file before compiling, if true";
   output KeyWordIO.Records.Case case(
-    rowMax=KeyWordIO.getCSVRows(fileName=fileName, delimiter=delimiter),
-    colMax=KeyWordIO.getCSVCols(fileName=fileName, delimiter=delimiter),
+    rowMax=KeyWordIO.getCSVRows(fileName=fileName, delimiter=delimiter, cache=cache),
+    colMax=KeyWordIO.getCSVCols(fileName=fileName, delimiter=delimiter, cache=cache),
     header=header,
     margin=margin) "Case record";
 algorithm
@@ -21,7 +22,8 @@ algorithm
     colBegin=1,
     colEnd=case.colMax,
     delimiter=delimiter,
-    useQuotedStrings=useQuotedStrings);
+    useQuotedStrings=useQuotedStrings,
+    cache=cache);
   // Read margin string matrix from file
   case.marginString := KeyWordIO.readStringCSV(
     fileName=fileName,
@@ -30,7 +32,8 @@ algorithm
     colBegin=1,
     colEnd=margin,
     delimiter=delimiter,
-    useQuotedStrings=useQuotedStrings);
+    useQuotedStrings=useQuotedStrings,
+    cache=cache);
   // Read numerical data from file
   case.matrix := KeyWordIO.readRealCSV(
     fileName=fileName,
@@ -38,5 +41,6 @@ algorithm
     rowEnd=case.rowMax,
     colBegin=margin+1,
     colEnd=case.colMax,
-    delimiter=delimiter);
+    delimiter=delimiter,
+    cache=cache);
 end readCaseCSV;

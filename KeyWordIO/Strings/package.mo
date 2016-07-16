@@ -5,4 +5,8 @@ package Strings "String functions"
   import Modelica.Utilities.Strings.substring;
   import Modelica.Utilities.Strings.isEqual;
 
+
+
+
+
 end Strings;

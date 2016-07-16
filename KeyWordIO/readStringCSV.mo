@@ -8,11 +8,13 @@ function readStringCSV "Read real matrix from CSV file"
   input Integer colEnd = colBegin "End column of CSV array";
   input String delimiter = "\t" "Delimiter of CSV file";
   input Boolean useQuotedStrings = false "Use quoted strings, if true";
+  input Boolean cache = false "Read file before compiling, if true";
   output String matrix[rowEnd-rowBegin+1,colEnd-colBegin+1]
     "Matrix read from CSV file";
 
 protected
-  Integer countDelimiter = Modelica.Utilities.Strings.count(KeyWordIO.readLineWithoutCache(fileName, rowBegin),delimiter)
+  Integer countDelimiter=Modelica.Utilities.Strings.count(KeyWordIO.readLine(
+      fileName, rowBegin, cache), delimiter)
     "Count of delimiters in first row of CSV file";
   String line "Row to be processed";
   Boolean eof "End of file";
@@ -38,7 +40,7 @@ algorithm
   eof := false;
   for row in rowBegin:rowEnd loop
     if not eof then
-      (line,eof) := KeyWordIO.readLineWithoutCache(fileName, row);
+      (line,eof) :=KeyWordIO.readLine(fileName, row, cache);
       // Determine position of all delimiters
       indexDelimiter :=KeyWordIO.Strings.findAll(line, delimiter);
       indx := 1;
