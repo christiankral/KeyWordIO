@@ -11,5 +11,5 @@ protected
   Integer col "Number of columns";
 
 algorithm
-    (row,col) :=KeyWordIO.getCSVSize(fileName=fileName, delimiter=delimiter, cache=cache);
+  (row,col) :=KeyWordIO.getCSVSize(fileName=fileName, delimiter=delimiter, cache=cache);
 end getCSVRows;

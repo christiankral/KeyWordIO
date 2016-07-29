@@ -34,10 +34,5 @@ algorithm
   end for;
   assert(success,"getCaseCol: String "+name+" not found in case.headerString[headerRow,:]");
   case.matrix[:,index] := val;
-  Modelica.Utilities.Streams.print("index = "+String(index));
-  Modelica.Utilities.Streams.print(String(case.matrix[1,1]));
-  Modelica.Utilities.Streams.print(String(case.matrix[2,1]));
-  Modelica.Utilities.Streams.print(String(case.matrix[3,1]));
-  Modelica.Utilities.Streams.print(String(case.matrix[4,1]));
   KeyWordIO.writeCaseCSV(fileName=fileName,case=case,delimiter=delimiter,useQuotedStrings=useQuotedStrings);
 end overwriteCaseCSV;
