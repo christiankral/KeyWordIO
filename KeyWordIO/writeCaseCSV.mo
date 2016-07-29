@@ -31,7 +31,7 @@ algorithm
       // Write header line to file
       Modelica.Utilities.Streams.print(line,fileName);
   end for;
-  // Margin lines
+  // Margin plus data lines
   for row in 1:rowMatrixMax loop
     if colMarginMax>0 then
       // Margin first column

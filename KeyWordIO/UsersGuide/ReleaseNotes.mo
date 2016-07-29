@@ -7,7 +7,7 @@ class ReleaseNotes "Release Notes"
 <ul>
 <li>Added option to enable cache when reading</li>
 <li>Added support for unquoted strings of CSV files</li>
-<li>Added functions to read 'case CSV' files containing headers and left margin rows</li>
+<li>Added functions to read 'case CSV' files containing headers and left margin columns</li>
 <li>Added further examples</li>
 </ul>
 
