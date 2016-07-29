@@ -8,3 +8,14 @@ readRealCSV
 readStringCSV
 readLineWithoutCache
 Strings
+getCaseCol
+getCaseColIndex
+getCaseNumbers
+getCSVCols
+getCSVRows
+getCSVSize
+overwriteCaseCSV
+readCaseCSV
+readLine
+Records
+writeCaseCSV

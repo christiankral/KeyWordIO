@@ -2,3 +2,4 @@ expression
 findAll
 sizeCSV
 findInArray
+writeString

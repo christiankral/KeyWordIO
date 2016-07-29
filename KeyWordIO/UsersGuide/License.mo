@@ -2,7 +2,6 @@ within KeyWordIO.UsersGuide;
 class License "Modelica License 1.1"
   extends Modelica.Icons.Information;
   annotation(Documentation(info="<html>
-<h3>WindPowerPlants Modelica Library and Octave Scripts</h3>
 
 <p>The KeyWordIO library is released under the
 <a href=\"https://www.modelica.org/licenses/ModelicaLicense1.1\">Modelica License 1.1</a>
