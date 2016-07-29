@@ -5,7 +5,7 @@ model ElectricalCases "Read case record from CSV file"
   parameter String fileName_result = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case_result.csv");
   parameter Integer header = 2 "Number of header rows";
   parameter Integer margin = 2 "Number of left margin columns";
-  parameter Records.Case case=KeyWordIO.readCaseCSV(
+  parameter KeyWordIO.Records.Case case=KeyWordIO.readCaseCSV(
       fileName=fileName_result,
       header=header,
       margin=margin,
@@ -23,16 +23,14 @@ model ElectricalCases "Read case record from CSV file"
     L = KeyWordIO.getCaseCol(case,"L"))
     annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
 
-  Modelica.SIunits.Current Irms[cases]=electrical.currentSensor.abs_i "RMS currents";
-  Modelica.SIunits.Angle phii[cases]=electrical.currentSensor.arg_i "Current angles";
 
 initial algorithm
   Modelica.Utilities.Files.copy(fileName,fileName_result,replace=true);
 
 equation
   when terminal() then
-    KeyWordIO.overwriteCaseCSV(fileName_result,header=header,margin=margin,name="Irms",val=Irms);
-    KeyWordIO.overwriteCaseCSV(fileName_result,name="phii",val=Modelica.SIunits.Conversions.to_deg(phii));
+    KeyWordIO.overwriteCaseCSV(fileName_result,header=header,margin=margin,name="Irms",val=electrical.Irms);
+    KeyWordIO.overwriteCaseCSV(fileName_result,name="phii",val=Modelica.SIunits.Conversions.to_deg(electrical.phii));
   end when;
 
   annotation (experiment(StopTime = 1, Interval = 1E-3));
