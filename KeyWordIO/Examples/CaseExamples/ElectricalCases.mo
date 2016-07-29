@@ -6,12 +6,12 @@ model ElectricalCases "Read case record from CSV file"
   parameter Integer header = 2 "Number of header rows";
   parameter Integer margin = 2 "Number of left margin columns";
   parameter KeyWordIO.Records.Case case=KeyWordIO.readCaseCSV(
-      fileName=fileName_result,
+      fileName=fileName,
       header=header,
       margin=margin,
       cache=true);
   parameter Integer cases = KeyWordIO.getCaseNumbers(
-      fileName=fileName_result,
+      fileName=fileName,
       header=header,
       delimiter="\t",
       cache=true);
