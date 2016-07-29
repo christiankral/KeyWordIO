@@ -6,9 +6,9 @@ function writeRealCSV "Writing real matrix to CSV file"
   input Real matrix[:,:] "Actual matrix to be written to CSV file";
   input String[:,:] header = fill("",0,size(matrix,2))
     "Header lines to be written to CSV file";
+  input Integer significantDigits = 6 "Number of significant digits";
 protected
   String line "Line string";
-  Integer significantDigits = 15 "Number of significant Digits";
 algorithm
   if size(matrix,2)<>size(header,2) then
     Modelica.Utilities.Streams.error("writeRealCSV: number of columns of matrix ("+String(size(matrix,1))+") and header ("+String(size(header,1))+") do not match");

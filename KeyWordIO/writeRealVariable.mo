@@ -5,8 +5,7 @@ function writeRealVariable "Writing real variable to file"
   input String name "Name of parameter";
   input Real data "Actual value of parameter";
   input Boolean append = false "Append data to file";
-protected
-  Integer significantDigits = 15 "Number of significant Digits";
+  input Integer significantDigits = 6 "Number of significant digits";
 algorithm
   if not append then
     Modelica.Utilities.Files.removeFile(fileName);

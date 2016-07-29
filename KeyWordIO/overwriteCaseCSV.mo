@@ -11,6 +11,7 @@ function overwriteCaseCSV
   input Integer headerRow = 1 "Header row index for searching key";
   input Real val[KeyWordIO.getCSVRows(fileName=fileName,delimiter=delimiter)-header]
     "Real vector to be overwritten at column where header matches name";
+  input Integer significantDigits = 6 "Number of significant digits";
 protected
   Records.Case case = KeyWordIO.readCaseCSV(
     fileName=fileName,
@@ -18,7 +19,6 @@ protected
     margin=margin,
     delimiter=delimiter,
     useQuotedStrings=useQuotedStrings) "Case";
-  Integer significantDigits = 15 "Number of significant Digits";
   Integer index = 0 "Index found of name in header";
   Boolean success =  false "Success of searching name in header";
 
@@ -34,5 +34,5 @@ algorithm
   end for;
   assert(success,"getCaseCol: String "+name+" not found in case.headerString[headerRow,:]");
   case.matrix[:,index] := val;
-  KeyWordIO.writeCaseCSV(fileName=fileName,case=case,delimiter=delimiter,useQuotedStrings=useQuotedStrings);
+  KeyWordIO.writeCaseCSV(fileName=fileName,case=case,delimiter=delimiter,useQuotedStrings=useQuotedStrings,significantDigits=significantDigits);
 end overwriteCaseCSV;

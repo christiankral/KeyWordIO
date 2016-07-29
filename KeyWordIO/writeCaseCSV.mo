@@ -6,10 +6,10 @@ function writeCaseCSV
   input Records.Case case "Case";
   input String delimiter = "\t" "Delimiter of CSV file";
   input Boolean useQuotedStrings = false "Use quoted strings, if true";
+  input Integer significantDigits = 6 "Number of significant digits";
 
 protected
   String line "Line string";
-  Integer significantDigits = 15 "Number of significant Digits";
   Integer rowHeaderMax = size(case.headerString,1) "Number of rows of header";
   Integer colHeaderMax = size(case.headerString,2)
     "Number of columns of header";

@@ -5,8 +5,7 @@ function writeRealVariables "Write multiple real variables to file"
   input String name[:] "Name of variable";
   input Real data[:] "Actual value of variable";
   input Boolean append = false "Append data to file";
-protected
-  Integer significantDigits = 15 "Number of significant Digits";
+  input Integer significantDigits = 6 "Number of significant digits";
 algorithm
   // Check sizes of name and data
   if size(name, 1) <> size(data, 1) then

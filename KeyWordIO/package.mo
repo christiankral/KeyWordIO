@@ -20,43 +20,5 @@ package KeyWordIO "Read and write data files with key words"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  annotation(version = "0.X.0", versionBuild = 1, versionDate = "2016-XX-XX ", uses(Modelica(version = "3.2.2")));
+  annotation(version = "0.4.0", versionBuild = 1, versionDate = "2016-07-29", uses(Modelica(version = "3.2.2")));
 end KeyWordIO;
