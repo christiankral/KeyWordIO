@@ -1,10 +1,12 @@
 within KeyWordIO;
 function writeRealVariables "Write multiple real variables to file"
   extends Modelica.Icons.Function;
-  input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
+  input String fileName "Name of file" annotation(Dialog(saveSelector(filter="Text file (*.txt;*.dat)",caption="Text data file")));
   input String name[:] "Name of variable";
   input Real data[:] "Actual value of variable";
   input Boolean append = false "Append data to file";
+protected
+  Integer significantDigits = 15 "Number of significant Digits";
 algorithm
   // Check sizes of name and data
   if size(name, 1) <> size(data, 1) then
@@ -15,6 +17,6 @@ algorithm
     Modelica.Utilities.Files.removeFile(fileName);
   end if;
   for k in 1:size(name, 1) loop
-    Modelica.Utilities.Streams.print(name[k] + " = " + String(data[k]), fileName);
+    Modelica.Utilities.Streams.print(name[k] + " = " + String(data[k],significantDigits=significantDigits), fileName);
   end for;
 end writeRealVariables;

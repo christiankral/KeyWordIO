@@ -1,5 +1,5 @@
 within KeyWordIO;
-function readRealCSV "Read real matrix from CSV file"
+function readStringCSV "Read real matrix from CSV file"
   extends Modelica.Icons.Function;
   input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer rowBegin = 1 "First row of CSV array";
@@ -7,8 +7,9 @@ function readRealCSV "Read real matrix from CSV file"
   input Integer colBegin = 1 "First column of CSV array";
   input Integer colEnd = colBegin "End column of CSV array";
   input String delimiter = "\t" "Delimiter of CSV file";
+  input Boolean useQuotedStrings = false "Use quoted strings, if true";
   input Boolean cache = false "Read file before compiling, if true";
-  output Real matrix[rowEnd-rowBegin+1,colEnd-colBegin+1]
+  output String matrix[rowEnd-rowBegin+1,colEnd-colBegin+1]
     "Matrix read from CSV file";
 
 protected
@@ -18,21 +19,23 @@ protected
   String line "Row to be processed";
   Boolean eof "End of file";
   Integer indx "Local index of real value";
-  Real val "Local real value";
+  String val "Local string value";
   Integer indexDelimiter[countDelimiter]
     "Indexes of delimiters within line string";
+  Integer colMax = KeyWordIO.getCSVCols(fileName=fileName,delimiter=delimiter)
+    "Maximum number of rows";
 
 algorithm
   // Check validity of indexes
   if rowBegin < 1 then
-    Modelica.Utilities.Streams.error("readRealCSV: rowBegin < 1");
+    Modelica.Utilities.Streams.error("readStringCSV: rowBegin < 1");
   end if;
   if colBegin < 1 then
-    Modelica.Utilities.Streams.error("readRealCSV: colBegin < 1");
+    Modelica.Utilities.Streams.error("readStringCSV: colBegin < 1");
   end if;
   // Check if number of expected columns is present in CSV file
   if countDelimiter+1 < colEnd then
-    Modelica.Utilities.Streams.error("readRealCSV: Number of columns of CSV file ("+String(countDelimiter+1)+") is less than colEnd ("+String(colEnd)+")");
+    Modelica.Utilities.Streams.error("readStringCSV: Number of columns of CSV file ("+String(countDelimiter+1)+") is less than colEnd ("+String(colEnd)+")");
   end if;
   eof := false;
   for row in rowBegin:rowEnd loop
@@ -45,10 +48,20 @@ algorithm
         if i>1 then
           indx :=indexDelimiter[i-1]+1;
         end if;
-        // Read real value from line ...
-        (val,indx) := Modelica.Utilities.Strings.scanReal(line,indx);
-        // ... and store it in the result matrix
-        matrix[row-rowBegin+1,i-colBegin+1] := val;
+        if useQuotedStrings then
+          // Read quoted string value from line ...
+          (val,indx) := Modelica.Utilities.Strings.scanString(line,indx);
+        else
+          // Read unquoted string value directly from line using substring...
+          if i==colMax then
+            val := Modelica.Utilities.Strings.substring(line,indx,Modelica.Utilities.Strings.length(line));
+          else
+            val := Modelica.Utilities.Strings.substring(line,indx,indexDelimiter[i]-1);
+            indx := indexDelimiter[i]+1;
+          end if;
+        end if;
+          // ... and store it in the result matrix
+          matrix[row-rowBegin+1,i-colBegin+1] := val;
       end for;
 
     end if;
@@ -69,4 +82,4 @@ algorithm
 <li>The decimal separator must be .</li>
 </ul>
 </html>"));
-end readRealCSV;
+end readStringCSV;

@@ -53,7 +53,7 @@ protected
     String functionName;
     Real pi = Constants.pi;
   algorithm
-    (token, nextIndex) := Strings.scanToken(string, startIndex, unsigned=  true);
+    (token, nextIndex) := Strings.scanToken(string, startIndex, unsigned = true);
     if token.tokenType == Types.TokenType.DelimiterToken and token.string == "(" then
       (result,nextIndex) := expression(
           string,

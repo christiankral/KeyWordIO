@@ -1,13 +1,14 @@
 within KeyWordIO;
 function writeRealCSV "Writing real matrix to CSV file"
   extends Modelica.Icons.Function;
-  input String fileName = "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
+  input String fileName = "Name of file" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input String delimiter = "\t" "Delimiter";
   input Real matrix[:,:] "Actual matrix to be written to CSV file";
   input String[:,:] header = fill("",0,size(matrix,2))
     "Header lines to be written to CSV file";
 protected
   String line "Line string";
+  Integer significantDigits = 15 "Number of significant Digits";
 algorithm
   if size(matrix,2)<>size(header,2) then
     Modelica.Utilities.Streams.error("writeRealCSV: number of columns of matrix ("+String(size(matrix,1))+") and header ("+String(size(header,1))+") do not match");
@@ -26,7 +27,7 @@ algorithm
   for col in 1:size(matrix,1) loop
     line :=String(matrix[col, 1]);
     for row in 2:size(matrix,2) loop
-      line :=line + delimiter + String(matrix[col, row]);
+      line :=line + delimiter + String(matrix[col, row],significantDigits=significantDigits);
     end for;
     Modelica.Utilities.Streams.print(line,fileName);
   end for;

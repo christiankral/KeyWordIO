@@ -1,10 +1,11 @@
 within KeyWordIO;
 function readRealParameter "Read the value of a Real parameter from file"
+  extends Modelica.Icons.Function;
   import Modelica.Utilities.*;
   import KeyWordIO;
-  input String fileName "Name of file" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
+  input String fileName "Name of file" annotation(Dialog(saveSelector(filter="Data file (*.txt;*.dat)",caption="Open text file for reading")));
   input String name "Name of parameter";
-  input Boolean cache = false "Read file with/without caching";
+  input Boolean cache = false "Read file before compiling, if true";
   output Real result "Actual value of parameter on file";
 protected
   String line;
@@ -18,11 +19,7 @@ protected
   Boolean found = false;
   Boolean endOfFile = false;
 algorithm
-  if not cache then
-    (line, endOfFile) := readLineWithoutCache(fileName, iline);
-  else
-    (line, endOfFile) := Streams.readLine(fileName, iline);
-  end if;
+  (line, endOfFile) :=KeyWordIO.readLine(fileName, iline, cache);
   while not found and not endOfFile loop
     (token, nextIndex) := Strings.scanToken(line);
     if token.tokenType == Types.TokenType.NoToken then
@@ -31,7 +28,7 @@ algorithm
       if token.string == name then
         message2 := message + String(iline);
         (delimiter, nextIndex) := Strings.scanDelimiter(line, nextIndex, {"="}, message2);
-        (result, nextIndex) :=KeyWordIO.Strings.expression(
+        (result, nextIndex) := KeyWordIO.Strings.expression(
           line,
           nextIndex,
           message2);
@@ -44,11 +41,7 @@ algorithm
     else
       Strings.syntaxError(line, nextIndex, "Expected identifier " + message + String(iline));
     end if;
-    if not cache then
-      (line, endOfFile) := readLineWithoutCache(fileName, iline);
-    else
-      (line, endOfFile) := Streams.readLine(fileName, iline);
-    end if;
+    (line, endOfFile) :=KeyWordIO.readLine(fileName, iline, cache);
   end while;
   // skip line
   // name found, get value of "name = value;"
