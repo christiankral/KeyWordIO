@@ -2,6 +2,20 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(preferredView = "info", Documentation(info="<html>
+<h5>Version 0.5.0, 2016-XX-XX</h5>
+<ul>
+<li>The following functions are renamed due inconsistent naming; however, this is a non backwards compatible change</li>
+    <ul>
+    <li><a href=modelica://KeyWordIO.readCaseNumbers>getCaseNumbers</a> renamed by 
+        <a href=modelica://KeyWordIO.readCaseNumbers>readCaseNumbers</a></li>
+    <li><a href=modelica://KeyWordIO.readCSVRows>getCSVRows</a> renamed by 
+        <a href=modelica://KeyWordIO.readCSVRows>readCSVRows</a></li>
+    <li><a href=modelica://KeyWordIO.readCSVCols>getCSVColss</a> renamed by 
+        <a href=modelica://KeyWordIO.readCSVCols>readCSVCols</a></li>
+    <li><a href=modelica://KeyWordIO.readCSVSize>getCSVSize</a> renamed by 
+        <a href=modelica://KeyWordIO.readCSVSize>readCSVSize</a></li>
+    </ul>
+</ul>
 
 <h5>Version 0.4.0, 2016-07-29</h5>
 <ul>

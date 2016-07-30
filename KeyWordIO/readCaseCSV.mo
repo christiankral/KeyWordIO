@@ -9,8 +9,14 @@ function readCaseCSV
   input Boolean useQuotedStrings = false "Use quoted strings, if true";
   input Boolean cache = false "Read file before compiling, if true";
   output KeyWordIO.Records.Case case(
-    rowMax=KeyWordIO.getCSVRows(fileName=fileName, delimiter=delimiter, cache=cache),
-    colMax=KeyWordIO.getCSVCols(fileName=fileName, delimiter=delimiter, cache=cache),
+    rowMax=KeyWordIO.readCSVRows(
+        fileName=fileName,
+        delimiter=delimiter,
+        cache=cache),
+    colMax=KeyWordIO.readCSVCols(
+        fileName=fileName,
+        delimiter=delimiter,
+        cache=cache),
     header=header,
     margin=margin) "Case record";
 algorithm

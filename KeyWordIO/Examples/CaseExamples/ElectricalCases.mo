@@ -10,7 +10,7 @@ model ElectricalCases "Read case record from CSV file"
       header=header,
       margin=margin,
       cache=true) "Case record";
-  parameter Integer cases = KeyWordIO.getCaseNumbers(
+  parameter Integer cases=KeyWordIO.readCaseNumbers(
       fileName=fileName,
       header=header,
       delimiter="\t",

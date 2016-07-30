@@ -10,7 +10,11 @@ function overwriteCaseCSV
   input Boolean cache = false "Read file before compiling, if true";
   input String name "Name to be identified in header";
   input Integer headerRow = 1 "Header row index for searching key";
-  input Real val[KeyWordIO.getCaseNumbers(fileName=fileName,header=header,delimiter="\t",cache=cache)]
+  input Real val[KeyWordIO.readCaseNumbers(
+    fileName=fileName,
+    header=header,
+    delimiter="\t",
+    cache=cache)]
     "Real vector to be overwritten at column where header matches name";
   input Integer significantDigits = 6 "Number of significant digits";
 
