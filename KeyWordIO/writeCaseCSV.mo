@@ -22,11 +22,11 @@ algorithm
   // Remove file before writing
   Modelica.Utilities.Files.removeFile(fileName);
   // Write header lines
-  for row in 1:rowHeaderMax loop
+    for row in 1:rowHeaderMax loop
     // Treat first column separately due delimiter
-    line := Strings.writeString(case.headerString[row, 1],useQuotedStrings);
+    line := KeyWordIO.Strings.writeString(case.headerString[row, 1],useQuotedStrings);
       for col in 2:colHeaderMax loop
-        line :=line + delimiter + Strings.writeString(case.headerString[row,col],useQuotedStrings);
+        line :=line + delimiter + KeyWordIO.Strings.writeString(case.headerString[row,col],useQuotedStrings);
       end for;
       // Write header line to file
       Modelica.Utilities.Streams.print(line,fileName);
@@ -35,10 +35,10 @@ algorithm
   for row in 1:rowMatrixMax loop
     if colMarginMax>0 then
       // Margin first column
-      line :=Strings.writeString(case.marginString[row, 1], useQuotedStrings);
+      line :=KeyWordIO.Strings.writeString(case.marginString[row, 1], useQuotedStrings);
       for col in 2:colMarginMax loop
         // Remaining margin columns
-        line :=line + delimiter + Strings.writeString(case.marginString[row,col],useQuotedStrings);
+        line :=line + delimiter + KeyWordIO.Strings.writeString(case.marginString[row,col],useQuotedStrings);
       end for;
       // WMatrix first column
       line := line + delimiter + String(case.matrix[row,1],significantDigits=significantDigits);
@@ -51,6 +51,8 @@ algorithm
       line := line + delimiter + String(case.matrix[row,col],significantDigits=significantDigits);
     end for;
     Modelica.Utilities.Streams.print(line,fileName);
+// ### For testing purposes only
+// Modelica.Utilities.Streams.print("line="+line);
   end for;
 
 end writeCaseCSV;

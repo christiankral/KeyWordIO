@@ -9,12 +9,12 @@ model ElectricalCases "Read case record from CSV file"
       fileName=fileName,
       header=header,
       margin=margin,
-      cache=true);
+      cache=true) "Case record";
   parameter Integer cases = KeyWordIO.getCaseNumbers(
       fileName=fileName,
       header=header,
       delimiter="\t",
-      cache=true);
+      cache=true) "Number of cases";
   KeyWordIO.Examples.CaseExamples.Electrical electrical[cases](
     Vrms = KeyWordIO.getCaseCol(case,"Vrms"),
     phiv = Modelica.SIunits.Conversions.from_deg(KeyWordIO.getCaseCol(case,"phiv")),
@@ -22,7 +22,6 @@ model ElectricalCases "Read case record from CSV file"
     R = KeyWordIO.getCaseCol(case,"R"),
     L = KeyWordIO.getCaseCol(case,"L"))
     annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
-
 
 initial algorithm
   Modelica.Utilities.Files.copy(fileName,fileName_result,replace=true);
