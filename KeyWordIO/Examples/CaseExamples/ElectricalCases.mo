@@ -1,7 +1,7 @@
 within KeyWordIO.Examples.CaseExamples;
 model ElectricalCases "Read case record from CSV file"
   extends Modelica.Icons.Example;
-  parameter String fileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case_long.csv");
+  parameter String fileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case.csv");
   parameter String fileName_result = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case_result.csv");
   parameter Integer header = 2 "Number of header rows";
   parameter Integer margin = 2 "Number of left margin columns";
