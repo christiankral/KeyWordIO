@@ -22,9 +22,9 @@ extern char* ModelicaAllocateString(size_t len);
 const char* ReadLine(const char *fileName, int lineNumber, int* endOfFile)
 {
         FILE*  fp;
-        char   c, strline[MAXLEN];
+        char   strline[MAXLEN];
         char*  line;
-        int    iLine;
+        int    c, iLine;
         size_t lineLen;
         if ((fp=fopen(fileName,\"r\")) == NULL)
         {
