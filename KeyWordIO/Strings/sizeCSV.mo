@@ -3,12 +3,12 @@ function sizeCSV "Determine size of CSV file"
   extends Modelica.Icons.Function;
   input String fileName "CSV file name";
   input String delimiter = "\t" "Delimiter of CSV file";
+  input Boolean cache = false "Read file before compiling, if true";
   output Integer row "Number of rows of CSV file";
   output Integer col "Number of columns of CSV file";
 
 protected
-  Integer countDelimiter = Modelica.Utilities.Strings.count(KeyWordIO.readLineWithoutCache(fileName, 1),delimiter)
-    "Count of delimiters in first row of CSV file";
+  Integer countDelimiter = Modelica.Utilities.Strings.count(KeyWordIO.readLine(fileName, lineNumber=1, cache=cache),delimiter) "Count of delimiters in first row of CSV file";
   String line "Row to be processed";
   Boolean eof "End of file";
 
@@ -22,10 +22,10 @@ algorithm
   while not eof loop
     row:=row+1;
     // Determine eof after reading next line
-    (line,eof) := KeyWordIO.readLineWithoutCache(fileName, row);
+    (line,eof) := KeyWordIO.readLine(fileName, lineNumber=row, cache=cache);
     // If the actual number of delimtiers is not equal number of delimiters of
     // the first line, then trigger end of reading
-    if Modelica.Utilities.Strings.count(KeyWordIO.readLineWithoutCache(fileName, row),delimiter)+1 <> col then
+    if Modelica.Utilities.Strings.count(KeyWordIO.readLine(fileName, lineNumber=row, cache=cache),delimiter)+1 <> col then
       // Trigger exit of while loop
       eof:=true;
       // Reduce numnber of rows by 1 to determine correct number of

@@ -7,7 +7,6 @@ function readLineWithoutCache
   output String string "Line of text";
   output Boolean endOfFile
     "If true, end-of-file was reached when trying to read line";
-
   external "C" string = ReadLine(fileName, lineNumber, endOfFile);
   annotation(Include = "
 #ifndef ReadLine_C

@@ -3,7 +3,7 @@ model ReadStringCSV "Read string matrix from CSV file"
   extends Modelica.Icons.Example;
   parameter Integer colHeader = 1 "Column index of header";
   parameter Integer colUnits = 2 "Column index of units";
-  parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/tab.csv");
+  parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case.csv");
   parameter String header[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colHeader,colHeader,1,4,"\t");
   parameter String units[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colUnits,colUnits,1,4,"\t");
 equation

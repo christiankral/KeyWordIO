@@ -10,7 +10,7 @@ model Electrical "Electrical circuit"
   Modelica.SIunits.Angle phii = currentSensor.arg_i "Angle of current";
 
   Modelica.Electrical.QuasiStationary.SinglePhase.Basic.Ground ground
-    annotation (Placement(transformation(extent={{-50,-40},{-30,-20}})));
+    annotation (Placement(transformation(extent={{-50,-56},{-30,-36}})));
   Modelica.Electrical.QuasiStationary.SinglePhase.Basic.Resistor resistor(R_ref=
        R) annotation (Placement(transformation(extent={{-10,10},{10,30}})));
   Modelica.Electrical.QuasiStationary.SinglePhase.Basic.Inductor inductor(L=L)
@@ -36,10 +36,7 @@ equation
           {40,20},{40,10}}, color={85,170,255}));
   connect(inductor.pin_n, currentSensor.pin_p)
     annotation (Line(points={{40,-10},{40,-20},{10,-20}}, color={85,170,255}));
-  connect(currentSensor.pin_n, voltageSource.pin_n) annotation (Line(points={{-10,
-          -20},{-40,-20},{-40,-10}}, color={85,170,255}));
-  connect(voltageSource.pin_n, ground.pin) annotation (Line(points={{-40,-10},{-40,
-          -10},{-40,-20}}, color={85,170,255}));
-  connect(currentSensor.pin_n, ground.pin)
-    annotation (Line(points={{-10,-20},{-40,-20}}, color={85,170,255}));
+  connect(voltageSource.pin_n, ground.pin) annotation (Line(points={{-40,-10},{-40,-36}},
+                           color={85,170,255}));
+  connect(currentSensor.pin_n, voltageSource.pin_n) annotation (Line(points={{-10,-20},{-40,-20},{-40,-10}}, color={85,170,255}));
 end Electrical;

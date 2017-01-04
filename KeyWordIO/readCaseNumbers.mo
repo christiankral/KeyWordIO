@@ -13,9 +13,14 @@ protected
   Integer row "Number of rows";
 
 algorithm
-  (row,col) :=KeyWordIO.readCSVSize(
-    fileName=fileName,
-    delimiter=delimiter,
-    cache=cache);
+  if cache==false then
+    (row,col) :=KeyWordIO.readCSVSize(
+      fileName=fileName,
+      delimiter=delimiter,
+      cache=cache);
+  else
+    row := Modelica.Utilities.Streams.countLines(fileName=fileName);
+    col := 0;
+  end if;
   cases := row - header;
 end readCaseNumbers;
