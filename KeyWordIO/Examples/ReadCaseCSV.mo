@@ -7,7 +7,8 @@ model ReadCaseCSV "Read case record from CSV file"
       header=2,
       margin=2,
       delimiter="\t",
-      useQuotedStrings=false);
-  parameter Real va[:] = KeyWordIO.getCaseCol(case,"va");
+      useQuotedStrings=false,
+      cache=true);
+  parameter Real va[:] = KeyWordIO.getCaseCol(case,"Vrms");
 
 end ReadCaseCSV;
