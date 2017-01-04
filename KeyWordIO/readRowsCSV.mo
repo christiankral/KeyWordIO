@@ -1,5 +1,5 @@
 within KeyWordIO;
-function readCSVRows "Read number of rows from CSV file"
+function readRowsCSV "Read number of rows from CSV file"
   extends Modelica.Icons.Function;
 
   input String fileName "CSV file name";
@@ -11,8 +11,8 @@ protected
   Integer col "Number of columns";
 
 algorithm
-  (row,col) :=KeyWordIO.readCSVSize(
-    fileName=fileName,
-    delimiter=delimiter,
-    cache=cache);
-end readCSVRows;
+    (row,col) :=KeyWordIO.readSizeCSV(
+      fileName=fileName,
+      delimiter=delimiter,
+      cache=cache);
+end readRowsCSV;

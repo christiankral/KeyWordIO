@@ -5,18 +5,42 @@ model ElectricalCases "Read case record from CSV file"
   parameter String fileName_result = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case_result.csv");
   parameter Integer header = 2 "Number of header rows";
   parameter Integer margin = 2 "Number of left margin columns";
-  parameter Integer cases=KeyWordIO.readCaseNumbers(
+  parameter Integer cases=KeyWordIO.readCaseNumbersCSV(
       fileName=fileName,
       header=header,
       delimiter="\t",
       cache=true) "Number of cases";
   KeyWordIO.Examples.CaseExamples.Electrical electrical[cases](
-    Vrms = KeyWordIO.readCaseCol(fileName=fileName,header=header,margin=margin,cache=true,name="Vrms"),
-    phiv = Modelica.SIunits.Conversions.from_deg(KeyWordIO.readCaseCol(fileName=fileName,header=header,margin=margin,cache=true,name="phiv")),
-    f = KeyWordIO.readCaseCol(fileName=fileName,header=header,margin=margin,cache=true,name="f"),
-    R = KeyWordIO.readCaseCol(fileName=fileName,header=header,margin=margin,cache=true,name="R"),
-    L = KeyWordIO.readCaseCol(fileName=fileName,header=header,margin=margin,cache=true,name="L"))
-    annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
+    Vrms=KeyWordIO.readCaseColCSV(
+        fileName=fileName,
+        header=header,
+        margin=margin,
+        cache=true,
+        name="Vrms"),
+    phiv=Modelica.SIunits.Conversions.from_deg(KeyWordIO.readCaseColCSV(
+        fileName=fileName,
+        header=header,
+        margin=margin,
+        cache=true,
+        name="phiv")),
+    f=KeyWordIO.readCaseColCSV(
+        fileName=fileName,
+        header=header,
+        margin=margin,
+        cache=true,
+        name="f"),
+    R=KeyWordIO.readCaseColCSV(
+        fileName=fileName,
+        header=header,
+        margin=margin,
+        cache=true,
+        name="R"),
+    L=KeyWordIO.readCaseColCSV(
+        fileName=fileName,
+        header=header,
+        margin=margin,
+        cache=true,
+        name="L")) annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
 
 initial algorithm
   Modelica.Utilities.Files.copy(fileName,fileName_result,replace=true);

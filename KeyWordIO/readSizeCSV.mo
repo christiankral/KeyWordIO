@@ -1,5 +1,5 @@
 within KeyWordIO;
-function readCSVSize "Determined number of rows and columns of CSV file"
+function readSizeCSV "Determined number of rows and columns of CSV file"
   extends Modelica.Icons.Function;
 
   input String fileName "CSV file name";
@@ -29,7 +29,14 @@ algorithm
       // Cause assert, if number of delimiters is different to first line
       assert(countDelimiter==countDelimiter1 or countDelimiter1==1 or Modelica.Utilities.Strings.isEmpty(line) or eof,"getCSVSize: row "+String(row)+" has a different number of columns than the previous rows");
     end while;
+    // If cache = true then read number of lines using countLines instead
+    if cache==true then
+       row := Modelica.Utilities.Streams.countLines(fileName=fileName);
+    else
+       row := row-1;
+    end if;
     // eof or empty(line) went one index to far, thus
-    row := row-1;
     col := countDelimiter1+1;
-end readCSVSize;
+
+
+end readSizeCSV;

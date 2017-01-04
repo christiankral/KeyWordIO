@@ -22,7 +22,7 @@ protected
   String val "Local string value";
   Integer indexDelimiter[countDelimiter]
     "Indexes of delimiters within line string";
-  Integer colMax=KeyWordIO.readCSVCols(fileName=fileName, delimiter=delimiter)
+  Integer colMax=KeyWordIO.readColsCSV(fileName=fileName, delimiter=delimiter)
     "Maximum number of rows";
 
 algorithm

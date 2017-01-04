@@ -1,5 +1,5 @@
 within KeyWordIO;
-function readCaseCol "Read column of case CSV file by header name"
+function readCaseColCSV "Read column of case CSV file by header name"
   extends Modelica.Icons.Function;
   input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer header = 2 "Number of header rows";
@@ -9,12 +9,12 @@ function readCaseCol "Read column of case CSV file by header name"
   input Boolean cache = false "Read file before compiling, if true";
   input String name "Name of header string be searched";
   input Integer headerRow = 1 "Header row index for searching name";
-  output Real val[readCSVRows(fileName=fileName,delimiter=delimiter,cache=cache)-header]
+  output Real val[readRowsCSV(fileName=fileName,delimiter=delimiter,cache=cache)-header]
     "Real vector extracted from data matrix";
 
 protected
-  Integer colMax =  readCSVCols(fileName=fileName,delimiter=delimiter,cache=cache);
-  Integer rowMax =  readCSVRows(fileName=fileName,delimiter=delimiter,cache=cache);
+  Integer colMax =  readColsCSV(fileName=fileName,delimiter=delimiter,cache=cache);
+  Integer rowMax =  readRowsCSV(fileName=fileName,delimiter=delimiter,cache=cache);
   String headerString[:,:] = KeyWordIO.readStringCSV(
       fileName=fileName,
       rowBegin=1,
@@ -45,4 +45,4 @@ algorithm
   end for;
   assert(success,"getCaseCol: String "+name+" not found in case.headerString[headerRow,:]");
   val := matrix[:,index];
-end readCaseCol;
+end readCaseColCSV;
