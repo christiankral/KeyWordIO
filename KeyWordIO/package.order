@@ -4,12 +4,12 @@ readRealParameter
 readRealCSV
 readStringCSV
 readLineWithoutCache
-readCSVRows
-readCSVCols
-readCSVSize
+readRowsCSV
+readColsCSV
+readCaseNumbersCSV
+readSizeCSV
 readCaseCSV
-readCaseNumbers
-readCaseCol
+readCaseColCSV
 readLine
 getCaseCol
 getCaseColIndex
