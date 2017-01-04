@@ -11,5 +11,5 @@ model ReadColumnByHeaderName "Read columns by header name"
   parameter String header[:,:] = KeyWordIO.readStringCSV(csvFileName,1,1,2,colConst,"\t",cache=true,useQuotedStrings=true);
   parameter Real val[:,:] = KeyWordIO.readRealCSV(csvFileName,3,rowConst,1,colConst,"\t",cache=true);
 initial equation
-  (row,col) = KeyWordIO.Strings.sizeCSV(csvFileName,cache=true);
+  (row,col) = KeyWordIO.readCSVSize(csvFileName,cache=true);
 end ReadColumnByHeaderName;
