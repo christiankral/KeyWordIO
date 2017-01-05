@@ -4,11 +4,21 @@ class ReleaseNotes "Release Notes"
   annotation(preferredView = "info", Documentation(info="<html>
 <h5>Version 0.6.0, 2017-01-05</h5>
 <ul>
+<li>This version supports large CSV case files handled by low level C file writing functions</li>
 <li>Function 
     <a href=modelica://KeyWordIO.Strings.quoteString>writeString</a> renamed by 
     <a href=modelica://KeyWordIO.Strings.quoteString>quoteString</a>; this is a non backwards compatible change</li>
 <li>Removed function
     <a href=modelica://KeyWordIO.writeCaseCSV>writeCaseCSV</a>; this is a non backwards compatible change</li>
+<li>The following classes are removed since they are obsolete and not needed any more; this is a non-backwards compatible change</li>
+<ul>
+    <li>getCaseCol</li>
+    <li>getCaseColIndex</li>
+    <li>readCaseCSV</li>
+    <li>Examples.ReadCaseCSV</li>
+    <li>Records.Case<li>
+    <li>Records<li>
+</ul>
 <li>Added low level C functions 
     <a href=modelica://KeyWordIO.Strings.writeString>writeString</a> to write a string to a file</li>
 <li>Added low level C functions 

@@ -8,11 +8,8 @@ readRowsCSV
 readColsCSV
 readCaseNumbersCSV
 readSizeCSV
-readCaseCSV
 readCaseColCSV
 readLine
-getCaseCol
-getCaseColIndex
 writeRealVariable
 writeRealVariables
 writeString
@@ -20,4 +17,3 @@ writeLine
 writeRealCSV
 overwriteCaseCSV
 Strings
-Records

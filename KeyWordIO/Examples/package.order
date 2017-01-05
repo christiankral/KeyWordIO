@@ -3,7 +3,6 @@ ReadRealParameter
 ReadRealCSV
 ReadStringCSV
 ReadStringCSVUnquoted
-ReadCaseCSV
 ReadColumnByHeaderName
 WriteRealVariable
 WriteRealVariables
