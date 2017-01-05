@@ -1,4 +1,4 @@
 expression
 findAll
 findInArray
-writeString
+quoteString

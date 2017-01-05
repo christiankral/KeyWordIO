@@ -2,6 +2,19 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(preferredView = "info", Documentation(info="<html>
+<h5>Version 0.6.0, 2017-01-05</h5>
+<ul>
+<li>Function 
+    <a href=modelica://KeyWordIO.Strings.quoteString>writeString</a> renamed by 
+    <a href=modelica://KeyWordIO.Strings.quoteString>quoteString</a>; this is a non backwards compatible change</li>
+<li>Removed function
+    <a href=modelica://KeyWordIO.writeCaseCSV>writeCaseCSV</a>; this is a non backwards compatible change</li>
+<li>Added low level C functions 
+    <a href=modelica://KeyWordIO.Strings.writeString>writeString</a> to write a string to a file</li>
+<li>Added low level C functions 
+    <a href=modelica://KeyWordIO.Strings.writeLine>writeLine</a> to write a line to a file</li>
+</ul>
+
 <h5>Version 0.5.0, 2017-01-04</h5>
 <ul>
 <li>The following functions are renamed due inconsistent naming; however, this is a non backwards compatible change</li>

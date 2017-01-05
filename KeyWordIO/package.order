@@ -15,8 +15,9 @@ getCaseCol
 getCaseColIndex
 writeRealVariable
 writeRealVariables
+writeString
+writeLine
 writeRealCSV
-writeCaseCSV
 overwriteCaseCSV
 Strings
 Records

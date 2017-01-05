@@ -27,7 +27,7 @@ algorithm
       // Determine number of delimiters of next line
       countDelimiter := Modelica.Utilities.Strings.count(line, delimiter);
       // Cause assert, if number of delimiters is different to first line
-      assert(countDelimiter==countDelimiter1 or countDelimiter1==1 or Modelica.Utilities.Strings.isEmpty(line) or eof,"getCSVSize: row "+String(row)+" has a different number of columns than the previous rows");
+      assert(countDelimiter==countDelimiter1 or countDelimiter1==1 or Modelica.Utilities.Strings.isEmpty(line) or eof,"getSizeCSV: row "+String(row)+" has a different number of columns than the previous rows");
     end while;
     // If cache = true then read number of lines using countLines instead
     if cache==true then
@@ -37,6 +37,5 @@ algorithm
     end if;
     // eof or empty(line) went one index to far, thus
     col := countDelimiter1+1;
-
 
 end readSizeCSV;

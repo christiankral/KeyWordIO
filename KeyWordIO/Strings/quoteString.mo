@@ -1,5 +1,5 @@
 within KeyWordIO.Strings;
-function writeString "Add optional quotes to string"
+function quoteString "Add optional quotes to string"
   input String string;
   input Boolean useQuotedString = false "Use quoted string, if true";
   output String result "Result string";
@@ -9,4 +9,4 @@ algorithm
   else
     result :=string;
   end if;
-end writeString;
+end quoteString;
