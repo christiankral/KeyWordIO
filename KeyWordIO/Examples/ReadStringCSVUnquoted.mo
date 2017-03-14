@@ -7,7 +7,7 @@ model ReadStringCSVUnquoted
   parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/tab2.csv");
   parameter String header[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colHeader,colHeader,1,4,"\t",useQuotedStrings=false);
   parameter String units[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colUnits,colUnits,1,4,"\t",useQuotedStrings=false);
-equation
+algorithm
   when terminal() then
     Modelica.Utilities.Streams.print("HEADER:");
     for k in 1:size(header,2) loop
