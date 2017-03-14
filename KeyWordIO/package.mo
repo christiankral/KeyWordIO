@@ -1,6 +1,6 @@
 within ;
 package KeyWordIO "Read and write data files with key words"
-
+extends Modelica.Icons.Package;
 
 
 

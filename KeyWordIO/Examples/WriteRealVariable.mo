@@ -7,7 +7,7 @@ model WriteRealVariable "Write real variable to file"
   parameter String outputFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/../output.txt");
   Modelica.Blocks.Sources.Step step(offset=offset,height=height,startTime=startTime)
     annotation (Placement(transformation(extent={{-8,-8},{12,12}})));
-equation
+algorithm
   // Start value of step.y
   when initial() then
     KeyWordIO.writeRealVariable(outputFileName,"y_start",step.y,append=false);

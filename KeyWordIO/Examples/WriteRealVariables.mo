@@ -9,14 +9,14 @@ model WriteRealVariables "Write real variable to file"
   discrete Real y_end(start=0) "End value of step.y right after switching";
   Modelica.Blocks.Sources.Step step(offset=offset,height=height,startTime=startTime)
     annotation (Placement(transformation(extent={{-8,-8},{12,12}})));
-equation
+algorithm
   // Start value of step.y
   when initial() then
-    y_start = step.y;
+    y_start := step.y;
   end when;
   // End value of step.y right after switching
   when time>startTime then
-    y_end = step.y;
+    y_end := step.y;
   end when;
   when terminal() then
     KeyWordIO.writeRealVariables(outputFileName,{"y_start","y_end"},{y_start,y_end},append=false);
