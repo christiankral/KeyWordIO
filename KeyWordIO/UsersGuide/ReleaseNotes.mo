@@ -2,7 +2,7 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(preferredView = "info", Documentation(info="<html>
-<h5>Version 0.X.X, 2017-XX-X</h5>
+<h5>Version 0.7.0, 2017-03-15</h5>
 <ul>
 <li>Changed maximum string length from 255 to 512 characters</li>
 <li>Changed equation to algorithm to better support OpenModelica</li>
