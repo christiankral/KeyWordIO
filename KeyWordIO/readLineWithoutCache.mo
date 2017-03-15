@@ -16,7 +16,7 @@ function readLineWithoutCache
 extern void ModelicaFormatError(const char* string,...);
 extern char* ModelicaAllocateString(size_t len);
 #ifndef MAXLEN
-#define MAXLEN 255
+#define MAXLEN 512
 #endif
 const char* ReadLine(const char *fileName, int lineNumber, int* endOfFile)
 {
