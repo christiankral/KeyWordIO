@@ -4,7 +4,7 @@ model ReadStringCSV "Read string matrix from CSV file"
   parameter Integer colHeader = 1 "Column index of header";
   parameter Integer colUnits = 2 "Column index of units";
   parameter Boolean cache=false "Read file before compiling, if true";
-  parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/case.csv");
+  parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/csv/case.csv");
   parameter String header[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colHeader,colHeader,1,4,delimiter="\t",cache=cache);
   parameter String units[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colUnits,colUnits,1,4,delimiter="\t",cache=cache);
 equation

@@ -2,6 +2,13 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(preferredView = "info", Documentation(info="<html>
+<h5>Version 0.8.0, 2017-XX-XX</h5>
+<ul>
+<li>Moved CSV files to subdirectory csv</li>
+<li>Moved TXT file to subdirectory txt</li>
+<li>Added subdirectory Images</li>
+</ul>
+
 <h5>Version 0.7.0, 2017-03-15</h5>
 <ul>
 <li>Changed maximum string length from 255 to 512 characters</li>
