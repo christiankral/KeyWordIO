@@ -15,7 +15,17 @@ R2 = 2*3
 The file reading is performed by means of a C function. Therefore, the reading of a parameter into Modelica is actually always carried out when a simulation is performed. Consequently, the parameters shall not be treated as constant variables in the C code which is going to be compiled. The KeyWordIO libray is an alternative implementation to Modelica.Utilites.Examples.readRealParameter, which can be used to perform batch simulations, parameter studies and optimizations. 
 
 The library supports the reading of a matrixes from CSV files as well as the writing of matrixes into CSV files. The library also demonstrates how to batch parameterize different cases based on the data of 'case CSV' files. These 'case CSV' files are CSV data files with header rows and left margin columns. 
+
+Consider KeyWordIO.Examples.CaseExamples.ElectricalCases which reads the model parameter Vrms, phiv, f, R and L from the CSV file ``case.csv``. 
+
+![case.csv](https://github.com/christiankral/KeyWordIO/blob/master/KeyWordIO/Resources/Images/case.png?raw=true)
   
+The parameter are marked in yellow, the result columns are marked in blue and filled with dummy zero values. In the example the original data file ´´case.csv´´ is copied to the result file ´´case_result.csv´´. At the end of the simulation the result columns are overwritten by the results.
+
+![case_result.csv](https://github.com/christiankral/KeyWordIO/blob/master/KeyWordIO/Resources/Images/case_result.png?raw=true)
+
+The number of header rows and left margin columns can be specified (gray color) for each CSV file.
+
 # License
 
 This Modelica library is free software and the use is completely at your own
