@@ -2,10 +2,10 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(preferredView = "info", Documentation(info="<html>
-<h5>Version 0.8.0, 2017-XX-XX</h5>
+<h5>Version 0.8.0, 2017-10-08</h5>
 <ul>
-<li>Moved CSV files to subdirectory csv</li>
-<li>Moved TXT file to subdirectory txt</li>
+<li>Fixed error in assert message, see 
+    <a href=\"https://github.com/christiankral/KeyWordIO/issues/5\">#5</a></li>
 <li>Added subdirectory Images</li>
 </ul>
 

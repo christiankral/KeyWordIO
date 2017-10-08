@@ -11,7 +11,7 @@ protected
   String line "Line string";
 algorithm
   if size(matrix,2)<>size(header,2) then
-    Modelica.Utilities.Streams.error("writeRealCSV: number of columns of matrix ("+String(size(matrix,1))+") and header ("+String(size(header,1))+") do not match");
+    Modelica.Utilities.Streams.error("writeRealCSV: number of columns of matrix ("+String(size(matrix,2))+") and header ("+String(size(header,2))+") do not match");
   end if;
   Modelica.Utilities.Files.removeFile(fileName);
   // Write headers to file
