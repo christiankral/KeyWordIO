@@ -5,7 +5,7 @@ package UsersGuide "User's Guide"
 
 
 
-  annotation(preferredView = "info", Documentation(info="<html>
+  annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
 This library provides functions for reading parameters and and writing variables in key word oriented format, e.g.:
 </p>

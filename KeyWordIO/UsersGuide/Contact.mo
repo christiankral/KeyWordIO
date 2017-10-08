@@ -1,7 +1,7 @@
 within KeyWordIO.UsersGuide;
 class Contact "Contact"
   extends Modelica.Icons.Contact;
-  annotation(preferredView = "info", Documentation(info="<html>
+  annotation(Documentation(info="<html>
 <h4>Contact</h4>
 
 <p>

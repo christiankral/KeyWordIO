@@ -1,7 +1,7 @@
 within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
-  annotation(preferredView = "info", Documentation(info="<html>
+  annotation(Documentation(info="<html>
 <h5>Version 0.8.0, 2017-10-08</h5>
 <ul>
 <li>Fixed error in assert message, see 
