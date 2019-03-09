@@ -2,6 +2,13 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
+<h5>Version 0.9.0, 2019-03-09</h5>
+<ul>
+<li>Switch to Modelica Standard Library 3.2.3
+    <a href=\"https://github.com/christiankral/KeyWordIO/issues/6\">#6</a></li>
+<li>Remove <code>versionBuild</code> in library annotation</li>
+</ul>
+
 <h5>Version 0.8.0, 2017-10-08</h5>
 <ul>
 <li>Fixed error in assert message, see 
