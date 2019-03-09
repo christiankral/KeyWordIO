@@ -42,5 +42,5 @@ extends Modelica.Icons.Package;
 
 
 
-  annotation(version = "0.9.0", versionDate = "2019-03-09", uses(Modelica(version="3.2.3")));
+  annotation(version = "0.X.X", versionDate = "2019-XX-XX", uses(Modelica(version="3.2.3")));
 end KeyWordIO;
