@@ -33,7 +33,7 @@ algorithm
   end for;
 
   annotation (Documentation(info="<html>
-<p>This functions writes an array to a CSV file including header. If the header is not specified explicitely, the header is not written
+<p>This functions writes an array to a CSV file including header. If the header is not specified explicitly, the header is not written
 to the CSV file. Each row of the header string is written to the CSV file. However, the number of columns of <code>matrix</code> and <code>header</code> have to match.</p>
 
 <p><br>File format</p>

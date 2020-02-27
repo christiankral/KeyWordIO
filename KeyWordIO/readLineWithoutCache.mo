@@ -1,6 +1,6 @@
 within KeyWordIO;
 function readLineWithoutCache
-  "Reads a line of text from a file without cahing and returns it in a string"
+  "Reads a line of text from a file without caching and returns it in a string"
   extends Modelica.Icons.Function;
   input String fileName "Name of the file that shall be read" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input Integer lineNumber(min = 1) "Number of line to read";
