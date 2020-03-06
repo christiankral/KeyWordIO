@@ -12,7 +12,7 @@ function findAll "Find all indexes of 'subString' within 'string'"
     "Index of the beginning of the first occurrence of 'searchString' within 'string', or zero if not present";
 protected
   Integer countAll = count(string,searchString,1,caseSensitive)
-    "Number of all occurences of 'searchString' within 'string'";
+    "Number of all occurrences of 'searchString' within 'string'";
   Integer iStart = 1 "Local index to start serch from";
 
 algorithm

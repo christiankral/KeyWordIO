@@ -177,7 +177,7 @@ scanning of the expression starts.
 In case of error,
 the optional argument \"message\" is appended to the error
 message, in order to give additional information where
-the error occured.
+the error occurred.
 </p>
 <p>
 This function parses the following grammaer
