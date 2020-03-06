@@ -15,7 +15,7 @@ algorithm
     y_start := step.y;
   end when;
   // End value of step.y right after switching
-  when time>startTime then
+  when time>=startTime then
     y_end := step.y;
   end when;
   when terminal() then

@@ -13,7 +13,7 @@ algorithm
     KeyWordIO.writeRealVariable(outputFileName,"y_start",step.y,append=false);
   end when;
   // End value of step.y right after switching
-  when time>startTime then
+  when time>=startTime then
     KeyWordIO.writeRealVariable(outputFileName,"y_end",step.y,append=true);
   end when;
   annotation (experiment(StopTime = 1, Interval = 1E-3));
