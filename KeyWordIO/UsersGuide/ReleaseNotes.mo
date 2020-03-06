@@ -2,6 +2,12 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
+<h5>Version 0.X.0, 2020-XX-XX</h5>
+<ul>
+<li>Improve performance of simulation</li>
+<li>Fix spelling of documentation</li>
+</ul>
+
 <h5>Version 0.9.0, 2019-03-09</h5>
 <ul>
 <li>Switch to Modelica Standard Library 3.2.3
@@ -11,7 +17,7 @@ class ReleaseNotes "Release Notes"
 
 <h5>Version 0.8.0, 2017-10-08</h5>
 <ul>
-<li>Fixed error in assert message, see 
+<li>Fixed error in assert message, see
     <a href=\"https://github.com/christiankral/KeyWordIO/issues/5\">#5</a></li>
 <li>Added subdirectory Images</li>
 </ul>
@@ -25,8 +31,8 @@ class ReleaseNotes "Release Notes"
 <h5>Version 0.6.0, 2017-01-05</h5>
 <ul>
 <li>This version supports large CSV case files handled by low level C file writing functions</li>
-<li>Function 
-    <a href=modelica://KeyWordIO.Strings.quoteString>writeString</a> renamed by 
+<li>Function
+    <a href=modelica://KeyWordIO.Strings.quoteString>writeString</a> renamed by
     <a href=modelica://KeyWordIO.Strings.quoteString>quoteString</a>; this is a non backwards compatible change</li>
 <li>Removed function
     <a href=modelica://KeyWordIO.writeCaseCSV>writeCaseCSV</a>; this is a non backwards compatible change</li>
@@ -39,9 +45,9 @@ class ReleaseNotes "Release Notes"
     <li>Records.Case<li>
     <li>Records<li>
 </ul>
-<li>Added low level C functions 
+<li>Added low level C functions
     <a href=modelica://KeyWordIO.Strings.writeString>writeString</a> to write a string to a file</li>
-<li>Added low level C functions 
+<li>Added low level C functions
     <a href=modelica://KeyWordIO.Strings.writeLine>writeLine</a> to write a line to a file</li>
 </ul>
 
@@ -49,13 +55,13 @@ class ReleaseNotes "Release Notes"
 <ul>
 <li>The following functions are renamed due inconsistent naming; however, this is a non backwards compatible change</li>
     <ul>
-    <li><a href=modelica://KeyWordIO.readCaseNumbers>getCaseNumbers</a> renamed by 
+    <li><a href=modelica://KeyWordIO.readCaseNumbers>getCaseNumbers</a> renamed by
         <a href=modelica://KeyWordIO.readCaseNumbers>readCaseNumbersCSV</a></li>
-    <li><a href=modelica://KeyWordIO.readCSVRows>getCSVRows</a> renamed by 
+    <li><a href=modelica://KeyWordIO.readCSVRows>getCSVRows</a> renamed by
         <a href=modelica://KeyWordIO.readCSVRows>readRowsCSV</a></li>
-    <li><a href=modelica://KeyWordIO.readCSVCols>getCSVCols</a> renamed by 
+    <li><a href=modelica://KeyWordIO.readCSVCols>getCSVCols</a> renamed by
         <a href=modelica://KeyWordIO.readCSVCols>readColsCSV</a></li>
-    <li><a href=modelica://KeyWordIO.readCSVSize>getCSVSize</a> renamed by 
+    <li><a href=modelica://KeyWordIO.readCSVSize>getCSVSize</a> renamed by
         <a href=modelica://KeyWordIO.readCSVSize>readSizeCSV</a></li>
     </ul>
 <li>Alternative implementation of chaching now allows reading of large CSV files</li>
