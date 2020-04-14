@@ -59,7 +59,7 @@ const char* ReadLine(const char *fileName, int lineNumber, int* endOfFile)
                 }
         }
         fclose(fp);
-        strline[lineLen-1]='\0';
+        strline[lineLen-1]='\\0';
         line=ModelicaAllocateString(lineLen);
         strcpy(line, strline);
         *endOfFile=0;
@@ -74,9 +74,9 @@ const char* ReadLine(const char *fileName, int lineNumber, int* endOfFile)
 </pre></blockquote>
 <h4>Description</h4>
 <p>
-Function <b>readLine</b>(..) opens the given file, reads enough of the 
-content to get the requested line, and returns the line as a string. 
-Lines are separated by LF or CR-LF; the returned string does not 
+Function <b>readLine</b>(..) opens the given file, reads enough of the
+content to get the requested line, and returns the line as a string.
+Lines are separated by LF or CR-LF; the returned string does not
 contain the line separator.
 </p>
 <p>
