@@ -3,7 +3,7 @@ model WriteRealVariables "Write real variable to file"
   extends Modelica.Icons.Example;
   parameter Real offset = 0 "Offset";
   parameter Real height = 1 "Height";
-  parameter Modelica.SIunits.Time startTime = 0.5 "Starting time of step";
+  parameter Modelica.Units.SI.Time startTime=0.5 "Starting time of step";
   parameter String outputFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/../output.txt");
   discrete Real y_start "Start value of step.y";
   discrete Real y_end(start=0) "End value of step.y right after switching";

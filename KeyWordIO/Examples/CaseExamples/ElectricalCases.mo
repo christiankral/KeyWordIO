@@ -17,7 +17,7 @@ model ElectricalCases "Read case record from CSV file"
         margin=margin,
         cache=true,
         name="Vrms"),
-    phiv=Modelica.SIunits.Conversions.from_deg(KeyWordIO.readCaseColCSV(
+    phiv=Modelica.Units.Conversions.from_deg(KeyWordIO.readCaseColCSV(
         fileName=fileName,
         header=header,
         margin=margin,
@@ -40,7 +40,8 @@ model ElectricalCases "Read case record from CSV file"
         header=header,
         margin=margin,
         cache=true,
-        name="L")) annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
+        name="L"))
+    annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
 
 initial algorithm
   Modelica.Utilities.Files.copy(fileName,fileName_result,replace=true);
@@ -48,7 +49,10 @@ initial algorithm
 equation
   when terminal() then
     KeyWordIO.overwriteCaseCSV(fileName_result,header=header,margin=margin,name="Irms",val=electrical.Irms);
-    KeyWordIO.overwriteCaseCSV(fileName_result,name="phii",val=Modelica.SIunits.Conversions.to_deg(electrical.phii));
+    KeyWordIO.overwriteCaseCSV(
+      fileName_result,
+      name="phii",
+      val=Modelica.Units.Conversions.to_deg(electrical.phii));
   end when;
 
   annotation (experiment(StopTime = 1, Interval = 1E-3));

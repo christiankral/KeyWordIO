@@ -2,8 +2,10 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
-<h5>Version 0.X.0, 2020-XX-XX</h5>
+<h5>Version 0.10.0, 2021-07-19</h5>
 <ul>
+<li>Switch to Modelica Standard Library (MSL) 4.0,0</li>
+<li>Fix escape <code>\\0</code> warning in OpenModelica</li>
 <li>Improve performance of simulation</li>
 <li>Fix spelling of documentation</li>
 </ul>
