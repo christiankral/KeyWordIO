@@ -5,6 +5,7 @@ class ReleaseNotes "Release Notes"
 <h5>Version 0.10.0, 2021-07-19</h5>
 <ul>
 <li>Switch to Modelica Standard Library (MSL) 4.0,0</li>
+<li>Fix implementation of C inline code</li>
 <li>Fix escape <code>\\0</code> warning in OpenModelica</li>
 <li>Improve performance of simulation</li>
 <li>Fix spelling of documentation</li>
