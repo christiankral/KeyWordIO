@@ -5,15 +5,17 @@ class ReleaseNotes "Release Notes"
 <h5>Version 0.10.0, 2021-07-19</h5>
 <ul>
 <li>Switch to Modelica Standard Library (MSL) 4.0,0</li>
-<li>Fix implementation of C inline code</li>
-<li>Fix escape <code>\\0</code> warning in OpenModelica</li>
+<li>Fix implementation of C inline code,
+    see <a href=\"https://github.com/christiankral/KeyWordIO/issues/11\">#11</a></li>
+<li>Fix escape <code>\\0</code> warning in OpenModelica,
+    see <a href=\"https://github.com/christiankral/KeyWordIO/issues/9\">#9</a></li>
 <li>Improve performance of simulation</li>
 <li>Fix spelling of documentation</li>
 </ul>
 
 <h5>Version 0.9.0, 2019-03-09</h5>
 <ul>
-<li>Switch to Modelica Standard Library 3.2.3
+<li>Switch to Modelica Standard Library 3.2.3, see
     <a href=\"https://github.com/christiankral/KeyWordIO/issues/6\">#6</a></li>
 <li>Remove <code>versionBuild</code> in library annotation</li>
 </ul>
