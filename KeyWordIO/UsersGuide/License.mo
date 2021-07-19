@@ -8,7 +8,7 @@ class License "BSD-3-Clause"
 </p>
 
 <p>
-Copyright 2015-2019 Christian Kral and Anton Haumer
+Copyright 2015-2021 Christian Kral and Anton Haumer
 </p>
 
 <p>
