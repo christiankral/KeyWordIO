@@ -4,7 +4,7 @@ function writeString "Low level write of string to file"
   input String fileName "Name of the file that shall be read" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input String line "Line of text";
   output Integer status "Status";
-  external "C" status = WriteLine(fileName, line);
+  external "C" status = WriteLine(fileName, line)
   annotation(Include = "
 #ifndef WriteLine_C
 #define WriteLine_C
@@ -33,8 +33,8 @@ const int* WriteLine(const char *fileName, const char *line)
         return 0;
 }
 #endif
-",
- Documentation(info = "<html>
+");
+  annotation(Documentation(info = "<html>
 <h4>Syntax</h4>
 <blockquote><pre>
 (string, endOfFile) = <b>readLine</b>(fileName, lineNumber)
