@@ -2,6 +2,10 @@
 
 Modelica library supports the reading from files and writing to files of variables and parameters. Currently text files in key word oriented format and CSV files are supported.
 
+## Important
+
+Insteay of manually reading parameters from CSV files and manually writing result variables to CSV files the highly automated Julia script [OMcsv.jl](https://gitlab.com/christiankral/OMcsv.jl) is provided for the usage with OpenModelica.
+
 # Library description
 
 The main objective of the library is to read and write variables and parameters in key word oriented format.
@@ -32,4 +36,4 @@ The library is developed and maintained by Anton Haumer and Christian Kral.
 
 # Contact
 
-e-mail: dr.christian.kral(at)gmail.com   
+In case you have any questions or requests please [open an issue at GitHub](https://github.com/christiankral/KeyWordIO/issues/new)
