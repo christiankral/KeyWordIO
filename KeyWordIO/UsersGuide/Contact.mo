@@ -7,7 +7,7 @@ class Contact "Contact"
 <p>
 Anton Haumer<br>
 <a href=\"http://www.haumer.at\">Technical Consulting &amp; Electrical Engineering</a><br>
-3423 St. Andrae-Woerdern, Austria<br>
+93049 Regensburg, Germany<br>
 email: <a HREF=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a><br>
 </p>
 

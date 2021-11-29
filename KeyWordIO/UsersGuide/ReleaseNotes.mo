@@ -2,9 +2,15 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
+<h5>Version 0.11.0, 2021-11-29</h5>
+<ul>
+<li>Read parameters from a Matlab-script</li>
+</ul>
+
+
 <h5>Version 0.10.0, 2021-07-19</h5>
 <ul>
-<li>Switch to Modelica Standard Library (MSL) 4.0,0</li>
+<li>Switch to Modelica Standard Library (MSL) 4.0.0</li>
 <li>Fix implementation of C inline code,
     see <a href=\"https://github.com/christiankral/KeyWordIO/issues/11\">#11</a></li>
 <li>Fix escape <code>\\0</code> warning in OpenModelica,

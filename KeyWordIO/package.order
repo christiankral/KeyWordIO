@@ -1,6 +1,7 @@
 UsersGuide
 Examples
 readRealParameter
+readReal_m
 readRealCSV
 readStringCSV
 readLineWithoutCache
