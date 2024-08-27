@@ -2,11 +2,12 @@ within KeyWordIO.UsersGuide;
 class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
-<h5>Version 0.11.0, 2021-11-29</h5>
+
+<h5>Version 0.11.x, 2024-xx-xx</h5>
 <ul>
 <li>Read parameters from a Matlab-script</li>
+<li>Clean-up of usage of annotation(Dialog(loadSelector)) and annotation(Dialog(saveSelector))</li>
 </ul>
-
 
 <h5>Version 0.10.0, 2021-07-19</h5>
 <ul>

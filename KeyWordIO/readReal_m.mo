@@ -2,7 +2,7 @@ within KeyWordIO;
 function readReal_m "Read the value of a Real parameter from m-file"
   extends Modelica.Icons.Function;
   import Modelica.Utilities.*;
-  input String fileName "Name of file";
+  input String fileName "Name of file" annotation(Dialog(loadSelector(filter="m-file (*.m)",caption="Open m-file for reading")));
   input String name "Name of parameter";
   input Boolean cache = false "Read file before compiling, if true";
   output Real result "Actual value of parameter on file";

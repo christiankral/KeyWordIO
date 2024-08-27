@@ -2,7 +2,7 @@ within KeyWordIO;
 function readSizeCSV "Determined number of rows and columns of CSV file"
   extends Modelica.Icons.Function;
 
-  input String fileName "CSV file name";
+  input String fileName "CSV file name" annotation(Dialog(loadSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input String delimiter = "\t" "Delimiter of CSV file";
   input Boolean cache = false "Read file before compiling, if true";
   output Integer row "Number of rows";

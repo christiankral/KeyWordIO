@@ -1,7 +1,7 @@
 within KeyWordIO;
 function readRealCSV "Read real matrix from CSV file"
   extends Modelica.Icons.Function;
-  input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
+  input String fileName "CSV file name" annotation(Dialog(loadSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer rowBegin = 1 "First row of CSV array";
   input Integer rowEnd = rowBegin "End row of CSV array";
   input Integer colBegin = 1 "First column of CSV array";

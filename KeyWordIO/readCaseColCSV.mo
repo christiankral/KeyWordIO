@@ -1,7 +1,7 @@
 within KeyWordIO;
 function readCaseColCSV "Read column of case CSV file by header name"
   extends Modelica.Icons.Function;
-  input String fileName "CSV file name" annotation(Dialog(saveSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
+  input String fileName "CSV file name" annotation(Dialog(loadSelector(filter="Comma separated values (*.csv)",caption="CSV data file")));
   input Integer header = 2 "Number of header rows";
   input Integer margin = 2 "Number of left margin columns";
   input String delimiter = "\t" "Delimiter of CSV file";

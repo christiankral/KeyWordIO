@@ -1,7 +1,7 @@
 within KeyWordIO;
 function writeLine "Low level write of line including to file"
   extends Modelica.Icons.Function;
-  input String fileName "Name of the file that shall be read" annotation(Dialog(__Dymola_loadSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
+  input String fileName "Name of the file that shall be read" annotation(Dialog(saveSelector(filter = "Text files (*.txt; *.dat)", caption = "Open file in which Real parameters are present")));
   input String line "Line of text";
   output Integer status "Status";
   external "C" status = WriteLineLn(fileName, line);
