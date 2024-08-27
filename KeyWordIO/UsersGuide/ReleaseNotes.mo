@@ -3,6 +3,11 @@ class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
 
+<h5>Version 0.13.x, 202x-xx-xx</h5>
+<ul>
+<li>xxx</li>
+</ul>
+
 <h5>Version 0.12.0, 2024-08-27</h5>
 <ul>
 <li>Clean-up of usage of annotation(Dialog(loadSelector)) and annotation(Dialog(saveSelector))</li>
