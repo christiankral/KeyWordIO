@@ -2,11 +2,11 @@ within KeyWordIO.Examples;
 model ReadStringCSVUnquoted
   "Read string matrix from CSV file with unquoted strings"
   extends Modelica.Icons.Example;
-  parameter Integer colHeader = 1 "Column index of header";
-  parameter Integer colUnits = 2 "Column index of units";
+  parameter Integer rowHeader = 1 "Row index of header";
+  parameter Integer rowUnits = 2 "Row index of units";
   parameter String csvTabFileName = Modelica.Utilities.Files.loadResource("modelica://KeyWordIO/Resources/csv/tab2.csv");
-  parameter String header[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colHeader,colHeader,1,4,"\t",useQuotedStrings=false);
-  parameter String units[1,:] = KeyWordIO.readStringCSV(csvTabFileName,colUnits,colUnits,1,4,"\t",useQuotedStrings=false);
+  parameter String header[1,:] = KeyWordIO.readStringCSV(csvTabFileName,rowHeader,rowHeader,1,4,"\t",useQuotedStrings=false);
+  parameter String units[1,:] = KeyWordIO.readStringCSV(csvTabFileName,rowUnits,rowUnits,1,4,"\t",useQuotedStrings=false);
 algorithm
   when terminal() then
     Modelica.Utilities.Streams.print("HEADER:");
