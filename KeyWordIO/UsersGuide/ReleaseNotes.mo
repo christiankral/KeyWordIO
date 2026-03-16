@@ -3,9 +3,10 @@ class ReleaseNotes "Release Notes"
   extends Modelica.Icons.ReleaseNotes;
   annotation(Documentation(info="<html>
 
-<h5>Version 0.13.x, 202x-xx-xx</h5>
+<h5>Version 0.12.1, 2026-03-16</h5>
 <ul>
-<li>xxx</li>
+<li>Fix naming of example parameters,
+    see <a href=\"https://github.com/christiankral/KeyWordIO/issues/13\">#13</a></li>
 </ul>
 
 <h5>Version 0.12.0, 2024-08-27</h5>
