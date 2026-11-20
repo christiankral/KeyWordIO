@@ -12,7 +12,7 @@ function writeLine "Low level write of line including to file"
 # include <string.h>
 extern void ModelicaFormatError(const char* string,...);
 extern char* ModelicaAllocateString(size_t len);
-const int* WriteLineLn(const char *fileName, const char *line)
+int WriteLineLn(const char *fileName, const char *line)
 {
         FILE*  fp;
         
